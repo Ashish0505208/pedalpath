@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PedalPath - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the user is coming from the login page
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                // Request for location access
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        position => {
+                            console.log('Location accessed:', position);
+                        },
+                        error => {
+                            console.error('Error accessing location:', error);
+                        }
+                    );
+                } else {
+                    console.error('Geolocation is not supported by this browser.');
+                }
+                
+                // Remove the flag from sessionStorage after accessing
+                sessionStorage.removeItem('isLoggedIn');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">PedalPath</div>
+        <ul class="nav-links">  
+            <li><a href="login.html" id="logoutBtn">Logout</a></li>
+            <li><a href="payment.html">Pay</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <h1>Welcome to PedalPath!</h1>
+        <p>Your journey to a healthier and more sustainable lifestyle starts here.</p>
+        <a href="explore.html" class="explore-btn">Explore Bicycles</a>
+    </section>
+</body>
+</html>

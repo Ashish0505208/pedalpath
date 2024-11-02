@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PedalPath - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Style for error message */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Initially hide the error message */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loginForm').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Prevent form from submitting normally
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const errorMessage = document.getElementById('errorMessage'); // Get error message element
+
+                // Hide the error message initially
+                errorMessage.style.display = 'none';
+
+                console.log('Submitting login request:', email, password); // Log the login request
+
+                try {
+                    const response = await fetch('http://localhost:5000/api/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    console.log('Response status:', response.status); // Log the response status
+
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        // Redirect to home.html upon successful login without alert
+                        window.location.href = 'home.html';
+                    } else {
+                        // Display error message in the HTML instead of an alert
+                        errorMessage.textContent = data.error || 'Invalid email or password';
+                        errorMessage.style.display = 'block'; // Show the error message
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    errorMessage.textContent = 'An error occurred. Please try again.';
+                    errorMessage.style.display = 'block'; // Show the error message
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Login Form -->
+    <section class="login-section">
+        <h2>Login to PedalPath</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="login-submit-btn">Login</button>
+        </form>
+        <p class="error-message" id="errorMessage"></p> <!-- Error message paragraph -->
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </section>
+</body>
+</html>

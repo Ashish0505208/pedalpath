@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #2ecc71;
+    color: #fff;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Full height */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes full width */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev-slide, .next-slide {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Centering styles for sections */
+section {
+    text-align: center; /* Center text horizontally */
+    padding: 40px 20px; /* Add some padding for spacing */
+}
+
+.steps {
+    display: flex;
+    justify-content: center; /* Center the steps horizontally */
+    gap: 20px; /* Add space between steps */
+}
+
+.step {
+    background-color: #f8f9fa; /* Light background for steps */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.login-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-submit-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-submit-btn:hover {
+    background-color: #27ae60;
+}
+
+
+
+.signup-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.signup-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.signup-section form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.signup-section form label {
+    margin-top: 10px;
+}
+
+.signup-section form input {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.signup-submit-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-submit-btn:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+/* styles.css */
+
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #4CAF50;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Home Section styles */
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.explore-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+
+
+/* Styling for the Login Button */
+.login-btn {
+    background-color: #008CBA; /* Blue background for login button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for the login button */
+.login-btn:hover {
+    background-color: #005f75; /* Darker blue on hover */
+}
+
+
+
+/* Explore Section Styles */
+.explore-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4; /* Optional background color */
+}
+
+.location {
+    margin: 30px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 15px 0;
+}
+
+
+/* Add this CSS to your styles.css file */
+
+/* Styles for explore button */
+.explore-btn {
+    text-decoration: none; /* Remove underline */
+    background-color: #4CAF50; /* Background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+.explore-btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
