@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -87,3 +87,4 @@ app.post('/api/login', (req, res) => {
         }
     });
 });
+*/
