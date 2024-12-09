@@ -26,7 +26,7 @@ setInterval(() => {
 
 function navigateToLogin() {
     // Redirect to the login page
-    window.location.href = 'frontend/login.html';
+    window.location.href = 'login.html';
 }
 
 
